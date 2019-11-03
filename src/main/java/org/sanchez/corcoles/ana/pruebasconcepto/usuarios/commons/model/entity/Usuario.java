@@ -25,6 +25,8 @@ public class Usuario implements Serializable {
     @Column(unique = true, length = 100)
     private String email;
 
+    private String password;
+
     /*
      * Se utiliza fetch para indicar la forma de obtener los datos, hay dos tipos:
      * LAZY, al realizar la consulta únicamente obtiene el usuario
@@ -82,6 +84,14 @@ public class Usuario implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public List<Rol> getRoles() {
