@@ -25,7 +25,10 @@ public class Usuario implements Serializable {
     @Column(unique = true, length = 100)
     private String email;
 
+    @Column(length = 60)
     private String password;
+
+    private Integer intentos;
 
     /*
      * Se utiliza fetch para indicar la forma de obtener los datos, hay dos tipos:
@@ -92,6 +95,14 @@ public class Usuario implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getIntentos() {
+        return intentos;
+    }
+
+    public void setIntentos(Integer intentos) {
+        this.intentos = intentos;
     }
 
     public List<Rol> getRoles() {
